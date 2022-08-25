@@ -13,6 +13,6 @@ When("Sean shouts {string}", function (message) {
   this.message = message;
 });
 
-Then("Lucy hears Sean's shout", () => {
+Then("Lucy hears Sean's shout", function () {
   expect(this.listener.message).toContain(this.message);
 });
