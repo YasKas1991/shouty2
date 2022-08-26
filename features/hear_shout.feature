@@ -8,7 +8,10 @@ Feature: Feature name
       Given the range is 100
       And Sean is located at 0
       And Lucy is located 50
-      When Sean shouts "hello"
+      When Sean shouts:
+               |Hello|
+               |World|
+               |From Mars|
       Then Lucy hears Sean's shout
 
       Rule: Only shouts within a certain range should be heard.
