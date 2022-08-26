@@ -20,8 +20,14 @@ When("{shouter} shouts {string}", function (shouter, message) {
   this.persons[shouter.toLowerCase()].shout(message);
 });
 
-Then("{listener} hears {shouter} shout", function (listener, shouter) {
-  expect(this.persons[listener].messages).toEqual(
-    this.persons[shouter.toLowerCase].messages
+Then("{listener} hears {shouter}'s shout", function (listener, shouter) {
+  expect(this.persons[listener.toLowerCase()].messages).toEqual(
+    this.persons[shouter.toLowerCase()].shouts
+  );
+});
+
+Then("{listener} hears {shouter}'s shout", function (listener, shouter) {
+  expect(this.persons[listener.toLowerCase()].messages).not.toEqual(
+    this.persons[shouter.toLowerCase()].shouts
   );
 });
