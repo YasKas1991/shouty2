@@ -25,6 +25,22 @@ Feature: Feature name
       Then Lucy does not hear Sean's shout
 
 
+      Rule: Must be less than the maximum character lenght.
+
+      Scenario: Message is too long
+
+      Given the maximum character length is 140
+      When Sean shouts,
+      """This is a really long message
+      so long in fact that I am not going to
+      be allowed to send it, at least if I keep
+      typing like this until the length is over
+      the limit of 180 characters."""
+
+     Then Lucy does not hear Sean's shout
+
+      And an error message is recieved that states "Message too long"
+
 
 
 
