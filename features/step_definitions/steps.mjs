@@ -20,6 +20,14 @@ When("{shouter} shouts {string}", function (shouter, message) {
   this.persons[shouter.toLowerCase()].shout(message);
 });
 
+// TODO: Take the flat array, and use `forEach` to shout all of the messages...
+
+When("{shouter} shouts:", function (name, dataTable) {
+  dataTable.rawTable
+    .flat()
+    .forEach((shout) => this.persons[name.toLowerCase()].shout(shout));
+});
+
 Then("{listener} hears {shouter}'s shout", function (listener, shouter) {
   expect(this.persons[listener.toLowerCase()].messages).toEqual(
     this.persons[shouter.toLowerCase()].shouts

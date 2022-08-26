@@ -9,9 +9,9 @@ Feature: Feature name
       And Sean is located at 0
       And Lucy is located 50
       When Sean shouts:
-               |Hello|
-               |World|
-               |From Mars|
+            | Hello |
+            | World |
+            |From Mars|
       Then Lucy hears Sean's shout
 
       Rule: Only shouts within a certain range should be heard.
