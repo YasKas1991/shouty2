@@ -1,8 +1,7 @@
 import { Before, Given, Then, When } from "@cucumber/cucumber";
+import { expect } from "expect";
 import Network from "../../app/models/Network.js";
 import Person from "../../app/models/Person.js";
-import { expect } from "expect";
-import { isExportDeclaration } from "typescript";
 
 Before(function () {
   this.persons = {};
@@ -19,7 +18,7 @@ Given("{person} is located at {float}", function (name, position) {
 });
 
 Given("the maximum character length is {int}", function (maxLength) {
-  this.network = new Network(15, maxLength);
+  this.network = new Network(null, maxLength);
 });
 
 When("{shouter} shouts {string}", function (shouter, message) {
