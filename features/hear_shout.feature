@@ -11,5 +11,23 @@ Feature: Feature name
       When Sean shouts "hello"
       Then Lucy hears Sean's shout
 
+      Rule: Only shouts within a certain range should be heard.
+
+      Scenario: Multiple shouters
+
+      Given person's are located at Multiple locations
+      And Sean is located at 0
+      And Lucy is located 50
+      And Jimmy is located at 500
+      Then Lucy should not hear Jimmy
+
+      Rule: Shouters should know that have shouted
+
+      Given Sean shouted
+      And   Lucy is in range
+      When  Lucy recieves the shout
+      Then  Sean is notified
+
+
 
 
